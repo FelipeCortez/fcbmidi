@@ -39,5 +39,8 @@
 ///
 ////////////////////////////////////////////////////////////
 std::string resourcePath(void);
+std::string appSupportPath(void);
+std::string openOpenDialog(void);
+std::string openSaveDialog(void);
 
 #endif

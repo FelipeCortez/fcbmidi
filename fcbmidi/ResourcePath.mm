@@ -28,6 +28,7 @@
 ////////////////////////////////////////////////////////////
 #include "ResourcePath.hpp"
 #import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 
 ////////////////////////////////////////////////////////////
 std::string resourcePath(void)
@@ -49,4 +50,60 @@ std::string resourcePath(void)
     [pool drain];
 
     return rpath;
+}
+
+std::string appSupportPath(void)
+{
+    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+    
+    std::string rpath;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *applicationSupportDirectory = [paths firstObject];
+    rpath = [applicationSupportDirectory UTF8String] + std::string("/fcbmidi/");
+    
+    [pool drain];
+    
+    return rpath;
+}
+
+std::string openOpenDialog(void) {
+    // Loop counter.
+    int i;
+    
+    // Create a File Open Dialog class.
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    
+    // Set array of file types
+    NSArray *fileTypesArray;
+    fileTypesArray = [NSArray arrayWithObjects:@"jpg", @"gif", @"png", nil];
+    
+    // Enable options in the dialog.
+    [openDlg setCanChooseFiles:YES];
+    [openDlg setAllowedFileTypes:fileTypesArray];
+    [openDlg setAllowsMultipleSelection:FALSE];
+    
+    // Display the dialog box.  If the OK pressed,
+    // process the files.
+    if ( [openDlg runModal] == NSOKButton ) {
+        
+        // Gets list of all files selected
+        NSArray *files = [openDlg URLs];
+        
+        // Loop through the files and process them.
+        for( i = 0; i < [files count]; i++ ) {
+            
+            // Do something with the filename.
+            NSLog(@"File path: %@", [[files objectAtIndex:i] path]);
+        }
+        
+    }
+}
+
+std::string openSaveDialog(void) {
+    // Create a File Open Dialog class.
+    NSSavePanel* saveDlg = [NSSavePanel savePanel];
+    
+    if ([saveDlg runModal] == NSOKButton ) {
+        //
+    }
 }
