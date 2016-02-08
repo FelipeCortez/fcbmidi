@@ -74,8 +74,8 @@
 		4A66BFEE1BD94E5300AD24BD /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		4A66BFFF1BD94ED200AD24BD /* fcb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fcb.cpp; path = ../../fcb.cpp; sourceTree = "<group>"; };
 		4AE7B3241C690CDD001B349A /* librtmidi.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librtmidi.2.1.0.dylib; path = "../../../../Downloads/rtmidi-2.1.0/librtmidi.2.1.0.dylib"; sourceTree = "<group>"; };
-		4AE7B3281C6912C6001B349A /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
-		4AE7B3291C691399001B349A /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app.png; path = ../app.png; sourceTree = "<group>"; };
+		4AE7B3281C6912C6001B349A /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.markdown; path = ../README.markdown; sourceTree = "<group>"; };
+		4AE7B32A1C6916DA001B349A /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +120,6 @@
 		4A66BFDD1BD94E5300AD24BD = {
 			isa = PBXGroup;
 			children = (
-				4AE7B3291C691399001B349A /* app.png */,
-				4AE7B3281C6912C6001B349A /* README.markdown */,
 				4A5F2B741BDDCDD400782BA1 /* AppKit.framework */,
 				4A0D6D621BDAB34700BB58DF /* CoreMIDI.framework */,
 				4A66BFE91BD94E5300AD24BD /* fcbmidi */,
@@ -140,6 +138,8 @@
 		4A66BFE91BD94E5300AD24BD /* fcbmidi */ = {
 			isa = PBXGroup;
 			children = (
+				4AE7B32A1C6916DA001B349A /* app.png */,
+				4AE7B3281C6912C6001B349A /* README.markdown */,
 				4A66BFEA1BD94E5300AD24BD /* Supporting Files */,
 				4AE7B3271C690F16001B349A /* Frameworks */,
 				4A0D6D821BDAB5B800BB58DF /* Resources */,
